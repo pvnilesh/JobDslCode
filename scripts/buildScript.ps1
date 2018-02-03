@@ -1,3 +1,4 @@
+Set-Location "${ENV:WORKSPACE}\artifact_code"
 $metaFile = "metadata.txt"
 $jsonFile = ConvertFrom-Json "$(Get-Content $metaFile)"
 $artifactName = $jsonFile.Name
