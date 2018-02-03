@@ -12,7 +12,7 @@ If(!(test-path $targetPath))
 
 
 $srcFile = "${artifactName}.txt"
-$OutFile = "${artifactName}-${$artifactVersion}.zip"
+$OutFile = "${artifactName}-${artifactVersion}.zip"
 $targetFile = "$(Join-Path $targetPath $outFile)"
 if (!(Test-Path $targetFile))
 {
