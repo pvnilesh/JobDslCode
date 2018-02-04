@@ -18,7 +18,7 @@ function Import-ArtifactPOM()
         IF ($ArtifactVersion -eq "LATEST")
         {
 
-			Write-Host "version is latest"   
+			Write-Output "version is latest"   
 
 		}
 
@@ -26,7 +26,7 @@ function Import-ArtifactPOM()
 
 		{
 
-			Write-Host "version is ${ArtifactVersion}"        
+			Write-Output "version is ${ArtifactVersion}"        
 
 		}
     		
