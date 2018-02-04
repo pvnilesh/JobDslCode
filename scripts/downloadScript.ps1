@@ -1,4 +1,4 @@
-function Import-ArtifactPOM()
+function Download-Artifact()
 {
 	[CmdletBinding()]
 	param
@@ -18,7 +18,7 @@ function Import-ArtifactPOM()
         IF ($ArtifactVersion -eq "LATEST")
         {
 
-			Write-Out "version is latest"   
+			Write-Verbose "version is latest"   
 
 		}
 
@@ -26,10 +26,12 @@ function Import-ArtifactPOM()
 
 		{
 
-			Write-Out "version is ${ArtifactVersion}"        
+			Write-Verbose "version is ${ArtifactVersion}"        
 
 		}
     		
 	}
 	END { }
 }
+
+Download-Artifact $args[0] $args[1] $args[2] $args[3] $args[4]
