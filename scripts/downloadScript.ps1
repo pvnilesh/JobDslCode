@@ -22,7 +22,7 @@ function Download-Artifact()
         $ArtifactVersion = $ArtifactVersion.ToUpper()
         IF ($ArtifactVersion -eq "LATEST")
         {  
-			$metaFile = "..\artifactMetaData\artifactDetails.txt"
+			$metaFile = "${ENV:WORKSPACE}\artifactMetaData\artifactDetails.txt"
 			$jsonFile = ConvertFrom-Json "$(Get-Content $metaFile)"
 			$ArtifactVersion = $jsonFile.$ArtifactName.LatestVersion
 		}
