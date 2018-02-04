@@ -13,12 +13,12 @@ function Import-ArtifactPOM()
 	
 	PROCESS
 	{
-        Write-Output $NexusServer
+        Write-Out $NexusServer
         $ArtifactVersion = $ArtifactVersion.ToUpper()
         IF ($ArtifactVersion -eq "LATEST")
         {
 
-			Write-Output "version is latest"   
+			Write-Out "version is latest"   
 
 		}
 
@@ -26,7 +26,7 @@ function Import-ArtifactPOM()
 
 		{
 
-			Write-Output "version is ${ArtifactVersion}"        
+			Write-Out "version is ${ArtifactVersion}"        
 
 		}
     		
