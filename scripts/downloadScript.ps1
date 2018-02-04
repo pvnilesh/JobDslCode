@@ -21,20 +21,22 @@ function Download-Artifact()
 
         $ArtifactVersion = $ArtifactVersion.ToUpper()
         IF ($ArtifactVersion -eq "LATEST")
-        {
-
-			Write-OutPut "version is latest"   
-
+        {  
+			$metaFile = "..\artifactMetaData\artifactDetails.txt"
+			$jsonFile = ConvertFrom-Json "$(Get-Content $metaFile)"
+			$ArtifactVersion = $jsonFile.$ArtifactName.LatestVersion
 		}
 
 		ELSE
 		{   
-			$fileName = "{0}-{1}.{2}" -f ($ArtifactName, $ArtifactVersion, $ArtifactExtension)		
-			$urlDest = "{0}/repository/{1}/{2}" -f ($NexusServer, $NexusRepository, $fileName)
-			$taretFile = "{0}\{1}.{2}" -f ($TargetPath, $ArtifactName, $ArtifactExtension)
-			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($urlDest, $taretFile)
+
 		}
+		
+		$fileName = "{0}-{1}.{2}" -f ($ArtifactName, $ArtifactVersion, $ArtifactExtension)		
+		$urlDest = "{0}/repository/{1}/{2}" -f ($NexusServer, $NexusRepository, $fileName)
+		$taretFile = "{0}\{1}.{2}" -f ($TargetPath, $ArtifactName, $ArtifactExtension)
+		$webClient = New-Object System.Net.WebClient
+		$webClient.DownloadFile($urlDest, $taretFile)
 		    		
 	}
 	END { }

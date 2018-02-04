@@ -1,0 +1,7 @@
+{
+    "testArtifact": {
+      "LatestVersion": "0.0.2",
+      "CurrentVersion": "0.0.2",
+      "PreviousVersion": "0.0.1"
+    }
+}
