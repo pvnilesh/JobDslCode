@@ -13,12 +13,12 @@ function Download-Artifact()
 	
 	PROCESS
 	{
-        Write-Out $NexusServer
+        Write-OutPut $NexusServer
         $ArtifactVersion = $ArtifactVersion.ToUpper()
         IF ($ArtifactVersion -eq "LATEST")
         {
 
-			Write-Verbose "version is latest"   
+			Write-OutPut "version is latest"   
 
 		}
 
@@ -26,7 +26,7 @@ function Download-Artifact()
 
 		{
 
-			Write-Verbose "version is ${ArtifactVersion}"        
+			Write-OutPut "version is ${ArtifactVersion}"        
 
 		}
     		
