@@ -1,3 +1,7 @@
-.\uploadWithNexusVersioning.ps1 "D:\New folder\test\metadata" "App1" "abc" "http://35.201.168.32:8081" "LaserRaw" "admin" "admin123" "D:\New folder\test\target" 
+.\upload_v1.ps1 "D:\New folder\test\metadata" "App1" "abc" "http://35.201.168.32:8081" "LaserRaw" "admin" "admin123" "D:\New folder\test\target" 
 
-.\uploadWithNexusVersioning.ps1 #folder containg meta files #appName #artifactName #NexusServer #Repository #NexusUser #NexusPasswd #artifactFolderPath
+.\upload_v1.ps1 #folder_containg_meta_files #appName #artifactName #NexusServer #Repository #NexusUser #NexusPasswd #artifactFolderPath
+
+.\download_v1.ps1 "D:\New folder\test\metadata" "App1" "abc" "http://35.201.168.32:8081" "LaserRaw" "1.0" "D:\New folder\test\toDeploy"
+
+.\download_v1.ps1 #folder_containg_meta_files #appName #artifactName #NexusServer #Repository #version #targetPath
