@@ -11,4 +11,10 @@ class Steps {
             }
         }
     }
+	
+	static void shell(context, String fileName) {
+        context.with {
+            shell("./\$$fileName")
+        }
+    }
 }

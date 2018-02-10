@@ -1,22 +1,23 @@
 package jobBuilder.Utils
 
-class Param {
+import java.util.ArrayList
+import jobBuilder.Utils.MyParameter
 
-    static Closure requiredString(
-        String _name,
-        String _defaultValue="",
-        String _regex=".+",
-        String _failedValidationMessage="You must set this!",
-        String _description="") {
-            return {
-                it / 'properties' / 'hudson.model.ParametersDefinitionProperty' / parameterDefinitions << 'hudson.plugins.validating__string__parameter.ValidatingStringParameterDefinition' {
-                    name(_name)
-                    defaultValue(_defaultValue)
-                    regex(_regex)
-                    failedValidationMessage(_failedValidationMessage)
-                    description(_description.stripIndent().trim())
-                }
-            }
+class Param {
+	static String paramConfig(ArrayList<MyParameter> list){
+		def str = ""
+		def clos = {
+		   for (item in list) {
+		      str += requiredString(item) + "\n"
+		   }
+		}
+		
+		clos()
+		return str
+	}
+	
+    static String requiredString(MyParameter myparam) {
+            return "stringParam $myparam.name, $myparam.defaultValue, $myparam.description"
     }
 
 }
