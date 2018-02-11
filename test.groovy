@@ -1,4 +1,6 @@
-String sourceFile = readFileFromWorkspace("utilities/MyUtilities.groovy")
+String sourceFile = readFileFromWorkspace("${workspace}/utilities/MyUtilities.groovy")
+println(sourceFile)
 Class MyUtilities = new GroovyClassLoader(getClass().getClassLoader()).parseClass(sourceFile)
-def myJob = job('example')
+println(MyUtilities)
+def myJob = job('Test/example')
 MyUtilities.addMyFeature(myJob)
