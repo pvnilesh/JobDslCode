@@ -38,7 +38,7 @@ job("Test/built-with-utils") {
         Scm.git(delegate)
     }
     parameters {
-        Param.paramConfig(myList)
+        Param.paramConfig(delegate,myList)
     }
     steps {
 		Steps.shell(delegate, 'CompileScript')
