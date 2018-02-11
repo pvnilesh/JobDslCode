@@ -15,8 +15,8 @@ public class Param {
 
 	}
 	
-    static String requiredString(String[] myparam) {
-            return "$myparam[0], $myparam[1], $myparam[2]"
+    static String requiredString(String[] mypara) {
+            return "mypara[0], mypara[1], mypara[2]"
     }
 
 }
