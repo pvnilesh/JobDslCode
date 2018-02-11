@@ -10,13 +10,13 @@ public class Param {
 		myParam[1] = ""
 		myParam[2] = ""
 		context.with {
-		    requiredString(myParam)
+		    stringParam(requiredString(myParam))
 		}
 
 	}
 	
     static String requiredString(String[] myparam) {
-            return "stringParam $myparam[0], $myparam[1], $myparam[2]"
+            return "$myparam[0], $myparam[1], $myparam[2]"
     }
 
 }
