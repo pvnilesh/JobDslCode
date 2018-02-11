@@ -32,7 +32,7 @@ myParam[1] = "package.sh"
 myParam[2] = ""
 myList.add(myParam)
 
-for(item in list){
+for(item in myList){
   println(item[0],item[1],item[2]) 
 }
 
