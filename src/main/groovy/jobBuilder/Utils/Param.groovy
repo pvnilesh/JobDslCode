@@ -4,7 +4,7 @@ import java.util.ArrayList
 import jobBuilder.Utils.MyParameter
 
 public class Param {
-	static String paramConfig(ArrayList<MyParameter> list){
+	static String paramConfig(ArrayList<String[]> list){
 		def str = ""
 		def clos = {
 		   for (item in list) {
@@ -16,8 +16,8 @@ public class Param {
 		return str
 	}
 	
-    static String requiredString(MyParameter myparam) {
-            return "stringParam $myparam.name, $myparam.defaultValue, $myparam.description"
+    static String requiredString(String[] myparam) {
+            return "stringParam $myparam[0], $myparam[1], $myparam[2]"
     }
 
 }
