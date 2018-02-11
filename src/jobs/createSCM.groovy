@@ -33,7 +33,7 @@ myParam[2] = ""
 myList.add(myParam)
 
 for(item in myList){
-  println("item[0],item[1],item[2]") 
+  println("$item[0],$item[1],$item[2]") 
 }
 
 job("Test/built-with-utils") {
