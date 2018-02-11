@@ -16,7 +16,7 @@ public class Param {
 	}
 	
     static String requiredString(String[] mypara) {
-            return "$mypara.getAt(0), $mypara.getAt(1), $mypara.getAt(2)"
+            return "$mypara.getClass()"
     }
 
 }
