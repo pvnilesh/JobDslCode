@@ -19,17 +19,17 @@ myList.add(myParam)
 
 myParam[0] = "BranchName"
 myParam[1] = "master"
-myParam[2] = "
+myParam[2] = ""
 myList.add(myParam)
 
 myParam[0] = "CompileScript""
 myParam[1] = "compile.sh"
-myParam[2] = "
+myParam[2] = ""
 myList.add(myParam)
 
 myParam[0] = "PackageScript"
 myParam[1] = "package.sh"
-myParam[2] = "
+myParam[2] = ""
 myList.add(myParam)
 
 job("Test/built-with-utils") {
