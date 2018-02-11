@@ -10,7 +10,7 @@ public class Param {
 		myParam[1] = ""
 		myParam[2] = ""
 		context.with {
-		    stringParam(myParam.getClass())
+		    stringParam(myParam.getClass().toString())
 		}
 
 	}
