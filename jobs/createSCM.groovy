@@ -1,5 +1,5 @@
 #!/bin/bash                                                                                                                                                                 
-//usr/bin/env groovy  -cp src/main/groovy "$0" $@; exit $?
+//usr/bin/env groovy  -cp src.main.groovy "$0" $@; exit $?
 
 
 import jobBuilder.Utils.Scm
