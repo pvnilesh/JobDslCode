@@ -35,10 +35,6 @@ myParam4[1] = "package.sh"
 myParam4[2] = ""
 myList.add(myParam4)
 
-for(item in myList){
-  println("${item[0]},${item[1]},${item[2]}") 
-}
-
 job("Test/built-with-utils") {
     logRotator(2, 10, -1, -1)
     scm {
