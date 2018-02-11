@@ -11,19 +11,19 @@ def param3 = new MyParameter()
 def param4 = new MyParameter()
 
 param1.name = "RepositoryName"
-param1.default = ""
+param1.defaultValue = ""
 param1.description = ""
 
 param2.name = "BranchName"
-param2.default = ""
+param2.defaultValue = ""
 param2.description = "master"
 
 param3.name = "CompileScript"
-param3.default = "compile.sh"
+param3.defaultValue = "compile.sh"
 param3.description = ""
 
 param4.name = "PackageScript"
-param4.default = "package.sh"
+param4.defaultValue = "package.sh"
 param4.description = ""
 
 myList.add(param1)
