@@ -3,7 +3,7 @@ package jobBuilder.Utils
 import java.util.ArrayList
 import jobBuilder.Utils.MyParameter
 
-class Param {
+public class Param {
 	static String paramConfig(ArrayList<MyParameter> list){
 		def str = ""
 		def clos = {

@@ -1,6 +1,6 @@
 package jobBuilder.Utils
 
-class Logrotator {
+public class Logrotator {
 
     static void logrotate(context, String repository,String gitBranch) {
         context.with {

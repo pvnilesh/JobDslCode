@@ -1,6 +1,6 @@
 package jobBuilder.Utils
 
-class MyParameter {
+public class MyParameter {
    String name
    String defaultValue
    String description

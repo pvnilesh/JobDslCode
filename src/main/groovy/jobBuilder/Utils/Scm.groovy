@@ -1,6 +1,6 @@
 package jobBuilder.Utils
 
-class Scm {
+public class Scm {
     static void git(context) {
         context.with {
             git {

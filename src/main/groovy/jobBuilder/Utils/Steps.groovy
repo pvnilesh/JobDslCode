@@ -1,6 +1,6 @@
 package jobBuilder.Utils
 
-class Steps {
+public class Steps {
 
     static void gradle(context, String gradleTasks,String gradleSwitches = "") {
         context.with {
