@@ -1,7 +1,6 @@
 package jobBuilder.Utils
 
 import java.util.ArrayList
-import jobBuilder.Utils.MyParameter
 
 public class Param {
 	static String paramConfig(ArrayList<String[]> list){
