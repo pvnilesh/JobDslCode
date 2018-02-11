@@ -1,8 +1,11 @@
-import jobBuilder.Utils.Scm
-import jobBuilder.Utils.Steps
-import static jobBuilder.Utils.Param.requiredString
 import java.util.ArrayList
-import jobBuilder.Utils.MyParameter
+
+String sourceFile1 = readFileFromWorkspace("src/main/groovy/jobBuilder/Utils/Scm.groovy")
+Class Scm = new GroovyClassLoader(getClass().getClassLoader()).parseClass(sourceFile1)
+String sourceFile2 = readFileFromWorkspace("src/main/groovy/jobBuilder/Utils/Steps.groovy")
+Class Steps = new GroovyClassLoader(getClass().getClassLoader()).parseClass(sourceFile2)
+String sourceFile3 = readFileFromWorkspace("src/main/groovy/jobBuilder/Utils/MyParameter.groovy")
+Class MyParameter = new GroovyClassLoader(getClass().getClassLoader()).parseClass(sourceFile3)
 
 def myList = new ArrayList()
 def param1 = new MyParameter()
@@ -31,7 +34,7 @@ myList.add(param2)
 myList.add(param3)
 myList.add(param4)
 
-job("built-with-utils") {
+job("Test/built-with-utils") {
     logRotator(2, 10, -1, -1)
     scm {
         Scm.git(delegate)
