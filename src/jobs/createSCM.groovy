@@ -9,31 +9,45 @@ Class Steps = new GroovyClassLoader(getClass().getClassLoader()).parseClass(sour
 String sourceFile3 = readFileFromWorkspace("src/main/groovy/jobBuilder/Utils/Param.groovy")
 Class Param = new GroovyClassLoader(getClass().getClassLoader()).parseClass(sourceFile3)
 
-def myList = new ArrayList<String[]>()
-def myParam1 = new String[3]
-def myParam2 = new String[3]
-def myParam3 = new String[3]
-def myParam4 = new String[3]
+def myParamList = new ArrayList<String[]>()
+def myStepList = new ArrayList<String>()
 
-myParam1[0] = "RepositoryName"
-myParam1[1] = ""
-myParam1[2] = ""
-myList.add(myParam1)
+if(ScmType.equalsIgnoreCase("GIT")) { 
+	def myParam1 = new String[3]
+	def myParam2 = new String[3]
 
-myParam2[0] = "BranchName"
-myParam2[1] = "master"
-myParam2[2] = ""
-myList.add(myParam2)
+	myParam1[0] = "RepositoryName"
+	myParam1[1] = ""
+	myParam1[2] = ""
+	myParamList.add(myParam1)
 
-myParam3[0] = "CompileScript"
-myParam3[1] = "compile.sh"
-myParam3[2] = ""
-myList.add(myParam3)
+	myParam2[0] = "BranchName"
+	myParam2[1] = "master"
+	myParam2[2] = ""
+	myParamList.add(myParam2)
+}
 
-myParam4[0] = "PackageScript"
-myParam4[1] = "package.sh"
-myParam4[2] = ""
-myList.add(myParam4)
+if(doCompile.equalsIgnoreCase("TRUE")){
+	def myParam3 = new String[3]
+	
+	myParam3[0] = "CompileScript"
+	myParam3[1] = "compile.sh"
+	myParam3[2] = ""
+	myParamList.add(myParam3)
+	
+	myStepList.add('CompileScript')
+}
+
+if(doPackage.equalsIgnoreCase("TRUE")){
+	def myParam4 = new String[3]
+
+	myParam4[0] = "PackageScript"
+	myParam4[1] = "package.sh"
+	myParam4[2] = ""
+	myParamList.add(myParam4)
+	
+	myStepList.add('PackageScript')
+}
 
 job("Test/built-with-utils") {
     logRotator(2, 10, -1, -1)
@@ -41,10 +55,9 @@ job("Test/built-with-utils") {
         Scm.git(delegate)
     }
     parameters {
-        Param.paramConfig(delegate,myList)
+        Param.paramConfig(delegate,myParamList)
     }
     steps {
-		Steps.shell(delegate, 'CompileScript')
-        Steps.shell(delegate, 'PackageScript')
+		Steps.myShell(delegate,myStepList)
     }
 }
