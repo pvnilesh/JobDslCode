@@ -4,10 +4,13 @@ import java.util.ArrayList
 
 public class Param {
 	static void paramConfig(context, ArrayList<String[]> list){
-		for (item in list) {
-		    context.with {
-			    requiredString(item)
-			}
+		def myParam = new String[3]
+
+		myParam[0] = "RepositoryName"
+		myParam[1] = ""
+		myParam[2] = ""
+		context.with {
+		    requiredString(myParam)
 		}
 
 	}
