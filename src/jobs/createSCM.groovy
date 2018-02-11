@@ -52,7 +52,7 @@ if(doPackage.equalsIgnoreCase("TRUE")){
 job("Test/built-with-utils") {
     logRotator(2, 10, -1, -1)
     scm {
-        Scm.git(delegate)
+        Scm.myscm(delegate,ScmType)
     }
     parameters {
         Param.paramConfig(delegate,myParamList)
