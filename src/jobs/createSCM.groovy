@@ -10,30 +10,33 @@ String sourceFile3 = readFileFromWorkspace("src/main/groovy/jobBuilder/Utils/Par
 Class Param = new GroovyClassLoader(getClass().getClassLoader()).parseClass(sourceFile3)
 
 def myList = new ArrayList<String[]>()
-def myParam = new String[3]
+def myParam1 = new String[3]
+def myParam2 = new String[3]
+def myParam3 = new String[3]
+def myParam4 = new String[3]
 
-myParam[0] = "RepositoryName"
-myParam[1] = ""
-myParam[2] = ""
-myList.add(myParam)
+myParam1[0] = "RepositoryName"
+myParam1[1] = ""
+myParam1[2] = ""
+myList.add(myParam1)
 
-myParam[0] = "BranchName"
-myParam[1] = "master"
-myParam[2] = ""
-myList.add(myParam)
+myParam2[0] = "BranchName"
+myParam2[1] = "master"
+myParam2[2] = ""
+myList.add(myParam2)
 
-myParam[0] = "CompileScript"
-myParam[1] = "compile.sh"
-myParam[2] = ""
-myList.add(myParam)
+myParam3[0] = "CompileScript"
+myParam3[1] = "compile.sh"
+myParam3[2] = ""
+myList.add(myParam3)
 
-myParam[0] = "PackageScript"
-myParam[1] = "package.sh"
-myParam[2] = ""
-myList.add(myParam)
+myParam4[0] = "PackageScript"
+myParam4[1] = "package.sh"
+myParam4[2] = ""
+myList.add(myParam4)
 
 for(item in myList){
-  println("$item[0],$item[1],$item[2]") 
+  println("${item[0]},${item[1]},${item[2]}") 
 }
 
 job("Test/built-with-utils") {
