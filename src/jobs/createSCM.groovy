@@ -22,7 +22,7 @@ myParam[1] = "master"
 myParam[2] = ""
 myList.add(myParam)
 
-myParam[0] = "CompileScript""
+myParam[0] = "CompileScript"
 myParam[1] = "compile.sh"
 myParam[2] = ""
 myList.add(myParam)
