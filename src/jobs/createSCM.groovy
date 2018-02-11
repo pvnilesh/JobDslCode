@@ -1,10 +1,10 @@
 import java.util.ArrayList
 
-String sourceFile1 = readFileFromWorkspace("src/main/groovy/jobBuilder/Utils/Scm.groovy")
+String sourceFile1 = readFileFromWorkspace("${workspace}/src/main/groovy/jobBuilder/Utils/Scm.groovy")
 Class Scm = new GroovyClassLoader(getClass().getClassLoader()).parseClass(sourceFile1)
-String sourceFile2 = readFileFromWorkspace("src/main/groovy/jobBuilder/Utils/Steps.groovy")
+String sourceFile2 = readFileFromWorkspace("${workspace}/src/main/groovy/jobBuilder/Utils/Steps.groovy")
 Class Steps = new GroovyClassLoader(getClass().getClassLoader()).parseClass(sourceFile2)
-String sourceFile3 = readFileFromWorkspace("src/main/groovy/jobBuilder/Utils/MyParameter.groovy")
+String sourceFile3 = readFileFromWorkspace("${workspace}/src/main/groovy/jobBuilder/Utils/MyParameter.groovy")
 Class MyParameter = new GroovyClassLoader(getClass().getClassLoader()).parseClass(sourceFile3)
 
 def myList = new ArrayList()
