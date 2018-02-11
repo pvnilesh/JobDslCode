@@ -1,4 +1,4 @@
-String sourceFile = readFileFromWorkspace("${env.workspace}/utilities/MyUtilities.groovy")
+String sourceFile = readFileFromWorkspace("utilities/MyUtilities.groovy")
 println(sourceFile)
 Class MyUtilities = new GroovyClassLoader(getClass().getClassLoader()).parseClass(sourceFile)
 println(MyUtilities)
