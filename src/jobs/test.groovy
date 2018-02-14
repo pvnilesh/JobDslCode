@@ -10,6 +10,12 @@ String sourceFile3 = readFileFromWorkspace("src/main/groovy/jobBuilder/Utils/Par
 Class Param = new GroovyClassLoader(getClass().getClassLoader()).parseClass(sourceFile3)
 
 def myStepList = new ArrayList<String[]>()
+def myScmInfoList = new ArrayList<String>()
+
+if(ScmType.equalsIgnoreCase("GIT")){
+	myScmInfoList.add(RepositoryName)
+	myScmInfoList.add(BranchName)
+}
 
 if(DoCompile.equalsIgnoreCase("TRUE")){
 	def myParam1 = new String[2]
@@ -30,7 +36,7 @@ if(DoPackage.equalsIgnoreCase("TRUE")){
 job("${FolderName}/${AppName}") {
     logRotator(2, 10, -1, -1)
     scm {
-        Scm.myscm(delegate,ScmType)
+        Scm.myscm(delegate,ScmType,myScmInfoList)
     }
     parameters {
         stringParam('NexusServer','35.201.168.32:8081','')
