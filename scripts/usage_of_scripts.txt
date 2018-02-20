@@ -5,3 +5,5 @@
 .\download_v1.ps1 "D:\New folder\test\metadata" "App1" "abc" "http://35.201.168.32:8081" "LaserRaw" "1.0" "D:\New folder\test\toDeploy"
 
 .\download_v1.ps1 #folder_containg_meta_files #appName #artifactName #NexusServer #Repository #version #targetPath
+
+.\upload_v2.ps1 ArtifactMetaData Goto Go 'http://35.201.168.32:8081' LaserRaw admin admin123 target
