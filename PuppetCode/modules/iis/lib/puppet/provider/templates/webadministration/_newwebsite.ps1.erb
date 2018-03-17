@@ -1,0 +1,24 @@
+$resource = @{
+  name            = '<%= "#{resource[:name]}" %>'
+  ensure          = '<%= "#{resource[:ensure]}" %>'
+  physicalpath    = '<%= "#{resource[:physicalpath]}" %>'
+  applicationpool = '<%= "#{resource[:applicationpool]}" %>'
+}
+
+$createParams = @{
+  Name            = $resource.name
+  PhysicalPath    = $resource.physicalpath
+  ApplicationPool = $resource.applicationpool
+  Force           = $true
+  ErrorAction     = 'Stop'
+<%= "port            = #{resource.provider.binding_port}" unless resource.provider.binding_port.nil? %>
+}
+
+# If there are no other websites, specify the Id, otherwise an Index Out of Range error can be thrown
+If ((Get-ChildItem 'IIS:\sites' | Measure-Object).Count -eq 0) {
+  $createParams['Id'] = 1
+}
+
+# create website
+# dont set applicationpool if it doesnt exist
+New-Website @createParams

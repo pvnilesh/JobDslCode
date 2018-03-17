@@ -1,0 +1,17 @@
+---
+# Double backslash for chocolatey, since it will escape the rest
+win_tomcat::install_path: 'c:\\tools'
+win_tomcat::version: '8.5.12' #Specify a version in the format 'x.x.xx'. Make sure to set the service name below.
+win_tomcat::ensure: installed # Ensure package is 'installed' or 'uninstalled'
+win_tomcat::service_name: 'Tomcat8' # Set the service name here, i.e. Tomcat7, Tomcat8, Tomcat9 
+win_tomcat::sample_app_src: 'https://tomcat.apache.org/tomcat-8.0-doc/appdev/sample/sample.war' # Source for Sample War file.
+#
+# Default Catalina setting locations and files.
+win_tomcat::catalina_home: "c:\\tools\\apache-tomcat-%{hiera('win_tomcat::version')}"
+win_tomcat::catalinaproperties: "c:\\tools\\apache-tomcat-%{hiera('win_tomcat::version')}\\conf\\catalina.properties"
+win_tomcat::tcusersxml: "c:\\tools\\apache-tomcat-%{hiera('win_tomcat::version')}\\conf\\tomcat-users.xml"
+win_tomcat::catalinapolicy: "c:\\tools\\apache-tomcat-%{hiera('win_tomcat::version')}\\conf\\catalina.policy"
+win_tomcat::contextxml: "c:\\tools\\apache-tomcat-%{hiera('win_tomcat::version')}\\conf\\context.xml"
+win_tomcat::loggingproperties: "c:\\tools\\apache-tomcat-%{hiera('win_tomcat::version')}\\conf\\logging.properties"
+win_tomcat::serverxml: "c:\\tools\\apache-tomcat-%{hiera('win_tomcat::version')}\\conf\\server.xml"
+win_tomcat::webxml: "c:\\tools\\apache-tomcat-%{hiera('win_tomcat::version')}\\conf\\web.xml"

@@ -1,0 +1,15 @@
+---
+win_nexus::fetch::group_id: 'com.nilesh'
+win_nexus::fetch::artifact_id: 'SampleWebApp'
+win_nexus::fetch::version: '0.0.1'
+win_nexus::fetch::repository: 'maven-releases'
+win_nexus::fetch::extension: 'war'
+win_nexus::fetch::nexus_url: '35.201.168.32:8081'
+win_nexus::fetch::username: 'admin'
+win_nexus::fetch::password: 'admin123'
+win_nexus::fetch::target_folder: 'C:\\Jenkins\\nilesh\\target'
+
+# key:values pairs for win_tomcat::deploy manifest
+win_tomcat::deploy::catalina_home: "C:\\Program Files\\Apache Software Foundation\\tomcat\\apache-tomcat-8.5.12"
+win_tomcat::deploy::fileName: 'SampleWebApp.war'
+win_tomcat::deploy::sourceDir: 'C:\\Jenkins\\nilesh\\target'
