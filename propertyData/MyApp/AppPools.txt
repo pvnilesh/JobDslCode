@@ -1,0 +1,32 @@
+{
+    "AppPools":  [
+		{
+			"app_pool_name":  "AppPool_1",
+            "ensure":  "present",
+            "state":  "started",
+            "managed_pipeline_mode": "Integrated",
+			"managed_runtime_version": "v4.0"
+        },
+		{
+			"app_pool_name":  "AppPool_2",
+            "ensure":  "present",
+            "state":  "started",
+            "managed_pipeline_mode": "Integrated",
+			"managed_runtime_version": "v4.0"
+        },
+		{
+			"app_pool_name":  "AppPool_3",
+            "ensure":  "present",
+            "state":  "started",
+            "managed_pipeline_mode": "Integrated",
+			"managed_runtime_version": "v4.0"
+        },
+		{
+			"app_pool_name":  "AppPool_4",
+            "ensure":  "present",
+            "state":  "started",
+            "managed_pipeline_mode": "Integrated",
+			"managed_runtime_version": "v4.0"
+        }
+	]	
+}
