@@ -8,7 +8,7 @@
 			"port": "801"
         },
 		{
-			"app_pool_name":  "Site_2",
+			"site_name":  "Site_2",
             "ensure":  "present",
             "applicationpool":  "DefaultAppPool",
             "physicalpath": "C:\\Sites\\Site_2",
