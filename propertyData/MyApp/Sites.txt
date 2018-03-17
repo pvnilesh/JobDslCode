@@ -1,0 +1,18 @@
+{
+    "Sites":  [
+		{
+			"site_name":  "Site_1",
+            "ensure":  "present",
+            "applicationpool":  "AppPool_1",
+            "physicalpath": "C:\\Sites\\Site_1",
+			"port": "801"
+        },
+		{
+			"app_pool_name":  "Site_2",
+            "ensure":  "present",
+            "applicationpool":  "DefaultAppPool",
+            "physicalpath": "C:\\Sites\\Site_2",
+			"port": "802"
+        }
+	]	
+}
